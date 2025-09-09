@@ -11,9 +11,69 @@
 </head>
 
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header>
+        <nav class="bg-green-700">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between py-4">
+                    <h1 class="text-white text-xl font-bold">Green Earth</h1>
+                    <ul class="hidden md:flex space-x-6 text-white">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Gallery</a></li>
+                        <li><a href="#">Plant a Tree</a></li>
+                    </ul>
+                    <div class="hidden md:block">
+                        <button
+                            class="bg-yellow-400 text-green-900 px-6 py-3 rounded-full hover:ring-2 hover:ring-yellow-500 transition">Plant
+                            a Tree</button>
+                    </div>
+                    <div class="md:hidden">
+                        <button id="mobile-menu-button" class="text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="mobile-menu" class="hidden md:hidden mt-3">
+                    <ul class="flex flex-col space-y-2 text-white">
+                        <li><a href="#" class="block px-3 py-2">About</a></li>
+                        <li><a href="#" class="block px-3 py-2">Gallery</a></li>
+                        <li><a href="#" class="block px-3 py-2">Plant a Tree</a></li>
+                    </ul>
+                    <button class="w-full mt-3 bg-yellow-400 text-green-900 px-4 py-2 rounded-full">Plant a
+                        Tree</button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="bg-green-100 py-12 px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
+                <div class="flex justify-center">
+                    <img src="Resources/Images/H-L-1.png" alt="Leaf Left" class="w-40 md:w-64">
+                </div>
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold mb-4 text-black-800">Plant a Tree, Grow a Future</h1>
+                    <p class="text-gray-700 mb-6">Join our mission to plant 1 million trees and make the Earth greener
+                        for
+                        future generations!</p>
+                    <button
+                        class="bg-yellow-400 text-green-900 px-6 py-3 rounded-full hover:ring-2 hover:ring-yellow-500 transition">Get
+                        Involved</button>
+                </div>
+                <div class="flex justify-center">
+                    <img src="Resources/Images/H-L-2.png" alt="Leaf Right" class="w-40 md:w-64">
+                </div>
+            </div>
+        </section>
+    </header>
+    <main>
+
+    </main>
+    <footer>
+
+    </footer>
     <script src="JavaScripT/JavaScripT.js"></script>
 </body>
 
