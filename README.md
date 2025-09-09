@@ -36,7 +36,7 @@ const add = (a, b) => a + b;
 Example:
 
 ```JS
-const [x, y] = [1, 2]; // x = 1, y = 2
+const [x, y] = [23, 2]; // x = 23, y = 2
 const {name, age} = {name: "Roman", age: 20}; // name = "Roman", age = 20
 ```
 
