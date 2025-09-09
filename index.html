@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Module-34</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/dist/full.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="CSS/CSS.css">
+    <link rel="stylesheet" href="CSS/CSS.css" />
 </head>
 
 <body>
@@ -23,8 +23,9 @@
                     </ul>
                     <div class="hidden md:block">
                         <button
-                            class="bg-yellow-400 text-green-900 px-6 py-3 rounded-full hover:ring-2 hover:ring-yellow-500 transition">Plant
-                            a Tree</button>
+                            class="bg-yellow-400 text-green-900 px-6 py-3 rounded-full hover:ring-2 hover:ring-yellow-500 transition">
+                            Plant a Tree
+                        </button>
                     </div>
                     <div class="md:hidden">
                         <button id="mobile-menu-button" class="text-white">
@@ -42,8 +43,9 @@
                         <li><a href="#" class="block px-3 py-2">Gallery</a></li>
                         <li><a href="#" class="block px-3 py-2">Plant a Tree</a></li>
                     </ul>
-                    <button class="w-full mt-3 bg-yellow-400 text-green-900 px-4 py-2 rounded-full">Plant a
-                        Tree</button>
+                    <button class="w-full mt-3 bg-yellow-400 text-green-900 px-4 py-2 rounded-full">
+                        Plant a Tree
+                    </button>
                 </div>
             </div>
         </nav>
@@ -51,29 +53,156 @@
         <section class="bg-green-100 py-12 px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-6">
                 <div class="flex justify-center">
-                    <img src="Resources/Images/H-L-1.png" alt="Leaf Left" class="w-40 md:w-64">
+                    <img src="Resources/Images/H-L-1.png" alt="Leaf Left" class="w-40 md:w-64" />
                 </div>
                 <div class="text-center">
                     <h1 class="text-4xl font-bold mb-4 text-black-800">Plant a Tree, Grow a Future</h1>
-                    <p class="text-gray-700 mb-6">Join our mission to plant 1 million trees and make the Earth greener
-                        for
-                        future generations!</p>
+                    <p class="text-gray-700 mb-6">
+                        Join our mission to plant 1 million trees and make the Earth greener for future generations!
+                    </p>
                     <button
-                        class="bg-yellow-400 text-green-900 px-6 py-3 rounded-full hover:ring-2 hover:ring-yellow-500 transition">Get
-                        Involved</button>
+                        class="bg-yellow-400 text-green-900 px-6 py-3 rounded-full hover:ring-2 hover:ring-yellow-500 transition">
+                        Get Involved
+                    </button>
                 </div>
                 <div class="flex justify-center">
-                    <img src="Resources/Images/H-L-2.png" alt="Leaf Right" class="w-40 md:w-64">
+                    <img src="Resources/Images/H-L-2.png" alt="Leaf Right" class="w-40 md:w-64" />
                 </div>
             </div>
         </section>
     </header>
-    <main>
 
+    <main class="bg-green-50">
+        <section class="py-10">
+            <h1 class="text-center text-2xl sm:text-3xl font-bold mb-8">Choose Your Trees</h1>
+            <div class="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-8 gap-6 px-4 sm:px-6 lg:px-8 w-full mx-auto">
+                <aside id="categories" class="md:col-span-1 lg:col-span-2 self-start md:sticky md:top-6">
+                    <div class="bg-white rounded-lg shadow p-4">
+                        <div class="font-bold mb-4">Categories</div>
+                        <div id="category-list" class="flex flex-col gap-2"></div>
+                    </div>
+                </aside>
+
+                <section id="trees" class="md:col-span-4 lg:col-span-4">
+                    <div id="tree-list"
+                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 justify-items-center">
+                    </div>
+                </section>
+
+                <aside id="cart" class="md:col-span-1 lg:col-span-2 self-start md:sticky md:top-6">
+                    <div class="bg-white rounded-lg shadow p-4">
+                        <div class="font-bold mb-4">Your Cart</div>
+                        <div id="cart-list" class="flex flex-col gap-2"></div>
+                        <div class="mt-4 font-semibold flex justify-between">
+                            <span>Total:</span>
+                            <span id="cart-total">৳0</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <dialog id="tree-modal" class="modal">
+            <div class="modal-box max-w-xl p-6">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800 mb-5">Tree Name</h3>
+                <img id="modal-image" src="" alt="Tree Image"
+                    class="w-full h-72 object-cover rounded-lg border border-green-200 mb-5" />
+                <p class="text-base text-gray-700 mb-4">
+                    <span class="font-semibold">Description:</span>
+                    <span id="modal-description">Description!</span>
+                </p>
+                <p class="text-base text-gray-700 mb-2">
+                    <span class="font-semibold">Category:</span>
+                    <span id="modal-category" class="text-green-700">Fruit Tree</span>
+                </p>
+                <p class="text-base text-gray-700 mb-6">
+                    <span class="font-semibold">Price:</span>
+                    <span id="modal-price" class="text-green-700">৳500</span>
+                </p>
+                <div class="flex justify-end">
+                    <form method="dialog">
+                        <button class="btn bg-green-600 text-white hover:bg-green-700 font-semibold">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+        <section class="bg-green-100 py-12 px-4 sm:px-6 lg:px-16">
+            <h2 class="text-3xl font-bold text-center mb-10">About the Campaign</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 max-w-6xl mx-auto">
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="Resources/Images/ABOUT.png" alt="About the Campaign"
+                        class="w-full max-w-md rounded-lg shadow" />
+                </div>
+                <div class="md:w-1/2 text-gray-800 space-y-4">
+                    <p class="text-lg">
+                        <strong>Green Earth</strong> is a global tree plantation initiative dedicated to fighting
+                        climate change.
+                        Since our start, we’ve planted over <strong>500,000 trees</strong> worldwide. By joining our
+                        campaign,
+                        you help restore forests, create habitats for wildlife, and combat global warming.
+                    </p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Restoration of natural habitats!</li>
+                        <li>Improvement of air quality!</li>
+                        <li>Support for local communities!</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="impact" class="bg-green-200/60 py-14 px-4">
+            <div class="max-w-screen-xl mx-auto">
+                <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8">Our Impact</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                    <div class="bg-white rounded-xl shadow p-6 text-center">
+                        <div class="text-3xl font-extrabold text-green-700 mb-1">500K+</div>
+                        <div class="text-gray-600">Trees Planted</div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow p-6 text-center">
+                        <div class="text-3xl font-extrabold text-green-700 mb-1">120+</div>
+                        <div class="text-gray-600">Communities Involved</div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow p-6 text-center">
+                        <div class="text-3xl font-extrabold text-green-700 mb-1">30+</div>
+                        <div class="text-gray-600">Countries Reached</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-green-700 py-12 px-4">
+            <div class="max-w-xl mx-auto bg-green-800 p-8 rounded-xl shadow-md">
+                <h2 class="text-2xl sm:text-3xl text-white font-bold text-center mb-6">Plant a Tree Today</h2>
+                <form id="tree-form" class="space-y-5" aria-label="Tree donation form">
+                    <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true"
+                        class="w-full px-4 py-3 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required
+                        aria-required="true"
+                        class="w-full px-4 py-3 rounded-md border border-green-300 focus:outline-none focus:ring-2 focus:ring-yellow-400" />
+                    <select id="number-of-trees" name="number-of-trees" required aria-required="true"
+                        class="w-full px-4 py-3 rounded-md border border-green-300 bg-white focus:outline-none focus:ring-2 focus:ring-yellow-400">
+                        <option value="" disabled selected>Number of Trees</option>
+                        <option value="1">1 Tree</option>
+                        <option value="5">5 Trees</option>
+                        <option value="10">10 Trees</option>
+                        <option value="25">25 Trees</option>
+                        <option value="50">50 Trees</option>
+                    </select>
+                    <button type="submit"
+                        class="w-full bg-yellow-400 hover:bg-yellow-300 text-green-900 font-semibold py-3 rounded-lg transition">
+                        Donate Now
+                    </button>
+                </form>
+                <p id="form-message" class="text-white text-center mt-4 hidden" role="alert" aria-live="polite"></p>
+            </div>
+        </section>
     </main>
+
     <footer>
 
     </footer>
+
     <script src="JavaScripT/JavaScripT.js"></script>
 </body>
 
